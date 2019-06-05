@@ -55,7 +55,7 @@ public class Entity extends Sim_entity {
     private Sim_port[] createPorts(String s, int num) {
         Sim_port[] ports = new Sim_port[num];
         for (int i = 0; i < num; i++) {
-            ports[i] = new Sim_port(this.name.concat(Integer.toString(i + 1)));
+            ports[i] = new Sim_port(s.concat(Integer.toString(i + 1)));
             add_port(ports[i]);
         }
         return ports;
@@ -92,7 +92,8 @@ public class Entity extends Sim_entity {
 
         Tuple<Double, Double>[] probRanges = getProbRanges();
         for (int i = 0; i < probRanges.length; i++) {
-            if (p > probRanges[i].f && p <= probRanges[i].s) {
+            if (p > probRanges[i].a && p <= probRanges[i].b) {
+                System.out.println("Scheduling to " + outputPorts[i].get_pname());
                 sim_schedule(outputPorts[i], 0.0, 0);
             }
         }
@@ -105,7 +106,7 @@ public class Entity extends Sim_entity {
         }
     }
 
-    public double[] getProbRanges(){
-        return this.probability;
+    public Tuple<Double, Double>[] getProbRanges(){
+        return this.probabilityRanges;
     }
 }

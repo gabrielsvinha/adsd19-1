@@ -6,7 +6,7 @@ public class Source extends Entity {
     }
     @Override
     public void body() {
-        for (int i = 0; i < 1000; i++) {
+        for (int i = 0; i < 10000; i++) {
             sim_schedule(outputPorts[0], 0.0, 0);
             sim_pause(sample());
         }

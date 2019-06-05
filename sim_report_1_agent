@@ -1,0 +1,267 @@
+############################################################
+#                                                          #
+#                    SIMULATION REPORT                     #
+#                                                          #
+############################################################
+
+Version: SimJava 2.0
+
+Simulation date:         5 de Junho de 2019
+Simulation start time:   13h34min24s BRT
+Simulation end time:     13h34min31s BRT
+
+############################################################
+#            Overall simulation run information            #
+############################################################
+
+Total simulated time:    14886.75935403141
+Total transient time:    0.0
+Total steady state time: 14886.75935403141
+Transient condition:     None
+Termination condition:   None
+Output analysis method:  None
+
+############################################################
+#               Simulation run measurements                #
+############################################################
+
+-------------------------- SOURCE --------------------------
+
+- Utilisation
+
+Sample mean:          0.0
+
+- Service time
+
+Sample mean:          0.0
+Sample variance:      0.0
+Sample std deviation: 0.0
+Maximum:              0.0
+Minimum:              0.0
+
+- Waiting time
+
+Sample mean:          0.0
+Sample variance:      0.0
+Sample std deviation: 0.0
+Maximum:              0.0
+Minimum:              0.0
+
+- Queue length
+
+Sample mean:          0.0
+Sample variance:      0.0
+Sample std deviation: 0.0
+Maximum:              0.0
+Minimum:              0.0
+
+---------------------- CPU_API_SERVER ----------------------
+
+- Utilisation
+
+Sample mean:          0.20153163722842918
+
+- Service time
+
+Sample mean:          0.30001529856435827
+Sample variance:      1.95813268644383E-5
+Sample std deviation: 0.004425079306005521
+Maximum:              0.3161507523034288
+Minimum:              0.2831197629407143
+
+- Waiting time
+
+Sample mean:          500.0239160226824
+Sample variance:      83379.75826907661
+Sample std deviation: 288.75553374624116
+Maximum:              1000.230360194719
+Minimum:              0.0
+
+- Queue length
+
+Sample mean:          335.88499963712644
+Sample variance:      633546.5574018556
+Sample std deviation: 795.9563790823311
+Maximum:              3333.0
+Minimum:              0.0
+
+---------------------- CPU_SCHEDULER -----------------------
+
+- Utilisation
+
+Sample mean:          0.3387162758966052
+
+- Service time
+
+Sample mean:          0.29998141998729677
+Sample variance:      2.0084211173754975E-5
+Sample std deviation: 0.004481541160555705
+Maximum:              0.315927860128113
+Minimum:              0.282047514477199
+
+- Waiting time
+
+Sample mean:          461.0653888476152
+Sample variance:      101609.89492025902
+Sample std deviation: 318.76307019518276
+Maximum:              1022.1729515698903
+Minimum:              0.0
+
+- Queue length
+
+Sample mean:          520.6000807046597
+Sample variance:      911378.0119503597
+Sample std deviation: 954.6612027051061
+Maximum:              3407.0
+Minimum:              0.0
+
+---------------------- DISK_SCHEDULER ----------------------
+
+- Utilisation
+
+Sample mean:          0.4024936403554138
+
+- Service time
+
+Sample mean:          0.8799861896752988
+Sample variance:      1.9979931073748692E-5
+Sample std deviation: 0.004469891617673597
+Maximum:              0.8972343496971007
+Minimum:              0.8656073130186996
+
+- Waiting time
+
+Sample mean:          448.046597395532
+Sample variance:      61543.930640058396
+Sample std deviation: 248.08049226019043
+Maximum:              850.9603053975079
+Minimum:              0.0
+
+- Queue length
+
+Sample mean:          204.93038203375173
+Sample variance:      94322.2964952631
+Sample std deviation: 307.11935219921116
+Maximum:              967.0
+Minimum:              0.0
+
+---------------------- CPU_NODE_AGENT ----------------------
+
+- Utilisation
+
+Sample mean:          0.9996251484599673
+
+- Service time
+
+Sample mean:          0.3000116735083556
+Sample variance:      1.981134517000364E-5
+Sample std deviation: 0.004450993728371637
+Maximum:              0.3181898805878518
+Minimum:              0.2778554664873809
+
+- Waiting time
+
+Sample mean:          986.5092595948685
+Sample variance:      318746.90419175837
+Sample std deviation: 564.5767478312921
+Maximum:              1812.8198237138222
+Minimum:              0.0
+
+- Queue length
+
+Sample mean:          3287.0036473837094
+Sample variance:      3543412.3736441135
+Sample std deviation: 1882.3953818590062
+Maximum:              6043.0
+Minimum:              0.0
+
+------------------- REGISTRY_NODE_AGENT --------------------
+
+- Utilisation
+
+Sample mean:          0.002002255618023699
+
+- Service time
+
+Sample mean:          0.0010000368231489044
+Sample variance:      1.9966910370676945E-9
+Sample std deviation: 4.468434890504386E-5
+Maximum:              0.0011687889423228626
+Minimum:              7.963014210190522E-4
+
+- Waiting time
+
+Sample mean:          0.0
+Sample variance:      0.0
+Sample std deviation: 0.0
+Maximum:              0.0
+Minimum:              0.0
+
+- Queue length
+
+Sample mean:          0.0
+Sample variance:      0.0
+Sample std deviation: 0.0
+Maximum:              1.0
+Minimum:              0.0
+
+--------------------- DISK_NODE_AGENT ----------------------
+
+- Utilisation
+
+Sample mean:          0.5790233277992968
+
+- Service time
+
+Sample mean:          0.8799286383542851
+Sample variance:      1.9963668224213035E-5
+Sample std deviation: 0.004468072092548758
+Maximum:              0.8962079232524047
+Minimum:              0.8639958792532525
+
+- Waiting time
+
+Sample mean:          0.4091578062063797
+Sample variance:      0.3656983953333246
+Sample std deviation: 0.6047300185482151
+Maximum:              5.354329555697404
+Minimum:              0.0
+
+- Queue length
+
+Sample mean:          0.26923991812309905
+Sample variance:      0.3791962980229988
+Sample std deviation: 0.6157891668607031
+Maximum:              7.0
+Minimum:              0.0
+
+------------------------ CPU_WEBAPP ------------------------
+
+- Utilisation
+
+Sample mean:          0.20150121789481823
+
+- Service time
+
+Sample mean:          0.2999700140344406
+Sample variance:      1.9999433935166567E-5
+Sample std deviation: 0.004472072666579398
+Maximum:              0.31600292199800606
+Minimum:              0.28387183827544504
+
+- Waiting time
+
+Sample mean:          5.970377338407189E-4
+Sample variance:      4.9790628139775565E-6
+Sample std deviation: 0.0022313813690128265
+Maximum:              0.03018884106495534
+Minimum:              0.0
+
+- Queue length
+
+Sample mean:          4.0105285485053405E-4
+Sample variance:      4.0089201145815026E-4
+Sample std deviation: 0.02002228786772756
+Maximum:              1.0
+Minimum:              0.0
+
