@@ -1,30 +1,35 @@
 import eduni.simjava.Sim_system;
-import entities.application.Application;
-import entities.database.Database;
-import entities.web.Web;
+import entities.cpu.CPU;
+import entities.disk.Disk;
+import entities.registry.Registry;
 
 public class Main {
     public static void main(String[] args) {
         System.out.println("Init!");
 
         Sim_system.initialise();
-//        Source source = new Source("Source", 10);
-        Web web = new Web("Web", 0, 0);
-        Application app = new Application("Application", 0, 0);
-        Database database = new Database("Database", 0, 0);
+        Source source = new Source("SOURCE", 0.2, 0.00001);
 
-        // Web and application feedback
-        Sim_system.link_ports("Web", "OUT", "Application", "IN");
-        Sim_system.link_ports("Application", "OUT", "Web", "IN");
+        CPU apiServerCPU = new CPU("CPU_API_SERVER", 0.5, 0.00002, 1, new double[]{1.0});
 
-        // Application and database feedback
-        Sim_system.link_ports("Application", "OUT", "Database", "IN");
-        Sim_system.link_ports("Database", "OUT", "Application", "IN");
+        CPU schedulerCPU = new CPU("CPU_SCHEDULER", 0.5, 0.00002, 1, new double[]{0.6, 0.4});
+        Disk schedulerDisk = new Disk("DISK_SCHEDULER", 0.88, 0.00002, 1);
 
-        // Web output
-        Sim_system.link_ports("Web", "OUT", "Source", "IN");
+        CPU agentCPU = new CPU("CPU_NODE_AGENT", 0.5, 0.00002, 3, new double[]{0.6, 0.2, 0.2});
+        Registry agentRegistry = new Registry("REGISTRY_NODE_AGENT", 0.01, 0.000000002);
+        Disk agentDisk = new Disk("DISK_NODE_AGENT", 0.88, 0.00002, 1);
 
-        Sim_system.set_trace_detail(false, true, false);
+        CPU webAppCPU = new CPU("CPU_WEBAPP", 0.5, 0.00002, 1, new double[]{1.0});
+
+        Sim_system.link_ports("SOURCE", "SOURCE_OUT_1", "CPU_API_SERVER", "CPU_API_SERVER_IN_1");
+
+        Sim_system.link_ports("CPU_API_SERVER", "CPU_API_SERVER_OUT_1", "CPU_SCHEDULER", "CPU_SCHEDULER_IN_1");
+        Sim_system.link_ports("CPU_SCHEDULER", "CPU_SCHEDULER_OUT_1", "CPU_NODE_AGENT", "CPU_NODE_AGENT_IN_1");
+        Sim_system.link_ports("CPU_SCHEDULER", "CPU_SCHEDULER_OUT_2", "DISK_SCHEDULER", "DISK_SCHEDULER_IN_1");
+
+        Sim_system.link_ports("CPU_NODE_AGENT", "CPU_NODE_AGENT_OUT_1", "REGISTRY_NODE_AGENT", "REGISTRY_NODE_AGENT_IN_1");
+        Sim_system.link_ports("CPU_NODE_AGENT", "CPU_NODE_AGENT_OUT_2", "DISK_NODE_AGENT", "DISK_NODE_AGENT_IN_1");
+        Sim_system.link_ports("CPU_NODE_AGENT", "CPU_NODE_AGENT_OUT_3", "CPU_WEBAPP", "CPU_WEBAPP_IN_1");
 
         Sim_system.run();
     }
